@@ -1,0 +1,2 @@
+*.CMake linguist-language=
+*.cmake.in linguist-language=
