@@ -12,6 +12,8 @@ Input: "cbbd"
 Output: "bb"
  */
 
+#include <string>
+
 #include<gtest/gtest.h>
 
 using namespace std;
