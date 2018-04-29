@@ -19,6 +19,8 @@ Assume we are dealing with an environment which could only store integers within
  reversed integer overflows.
  */
 
+#include <climits>
+
 #include<gtest/gtest.h>
 
 class Solution {
