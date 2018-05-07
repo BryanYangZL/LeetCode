@@ -47,8 +47,6 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
 #include <map>
 #include <string>
-#include <array>
-#include <tuple>
 
 #include<gtest/gtest.h>
 
