@@ -88,14 +88,31 @@ public:
 
 // 方法2: 由于在3999以内,所以可以将3999内全部列成表
 
+// 方法3: 根据方法2可以作简化的表。观察原始规则可以得出十制的数的每一位可以由罗马数字单独表示出来
+class Solution3 {
+public:
+    string intToRoman(int num) {
+        string M[] = {"", "M", "MM", "MMM"};
+        string C[] = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+        string X[] = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+        string I[] = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+        return M[num / 1000] + C[(num % 1000) / 100] + X[(num % 100) / 10] + I[num % 10];
+    }
+};
 
 
 TEST(_0012, IntToRoman) {
     Solution1 s1;
-
     ASSERT_EQ(s1.intToRoman(3), "III");
     ASSERT_EQ(s1.intToRoman(4), "IV");
     ASSERT_EQ(s1.intToRoman(9), "IX");
     ASSERT_EQ(s1.intToRoman(58), "LVIII");
     ASSERT_EQ(s1.intToRoman(1994), "MCMXCIV");
+
+    Solution3 s3;
+    ASSERT_EQ(s3.intToRoman(3), "III");
+    ASSERT_EQ(s3.intToRoman(4), "IV");
+    ASSERT_EQ(s3.intToRoman(9), "IX");
+    ASSERT_EQ(s3.intToRoman(58), "LVIII");
+    ASSERT_EQ(s3.intToRoman(1994), "MCMXCIV");
 }
