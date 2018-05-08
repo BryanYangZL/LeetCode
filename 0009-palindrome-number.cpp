@@ -36,8 +36,7 @@ public:
     }
 };
 
-TEST(_0009, PalindromeNumer)
-{
+TEST(_0009, PalindromeNumer) {
     Solution s;
 
     ASSERT_EQ(s.isPalindrome(121), true);

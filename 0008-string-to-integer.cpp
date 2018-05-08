@@ -67,7 +67,7 @@ public:
             i++;
         }
 
-        for (;str[i] >= '0' && str[i] <= '9'; i++) {
+        for (; str[i] >= '0' && str[i] <= '9'; i++) {
             res = res * 10 + sign * (str[i] - '0');
             if (res > INT_MAX) return INT_MAX;
             if (res < INT_MIN) return INT_MIN;

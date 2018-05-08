@@ -25,17 +25,17 @@ using namespace std;
 // 方法1: 将第一个字符串依次与后同的进行比较,每次仅比较上次相同的最短字符串长度
 class Solution {
 public:
-    string longestCommonPrefix(vector<string>& strs) {
+    string longestCommonPrefix(vector<string> &strs) {
         if (strs.size() <= 0) {
             return "";
         }
 
         // 可以优化成取最短字符串长度为minL
-        unsigned long minL =strs[0].size(); // 肯定不会超过其中任意字符串的长度
+        unsigned long minL = strs[0].size(); // 肯定不会超过其中任意字符串的长度
         vector<string>::const_iterator it = strs.begin();
         for (it++; it != strs.end(); it++) {
             minL = min(minL, (*it).size());
-            for (unsigned long i=0; i<minL; i++) {
+            for (unsigned long i = 0; i < minL; i++) {
                 if ((*it)[i] != strs[0][i]) {
                     minL = i;
                     break;
@@ -47,16 +47,15 @@ public:
     }
 };
 
-TEST(_0014, LongestCommonPrefix)
-{
+TEST(_0014, LongestCommonPrefix) {
     Solution s;
 
-    vector<string> strs0 = {"flower","flow","flight"};
+    vector<string> strs0 = {"flower", "flow", "flight"};
     ASSERT_EQ(s.longestCommonPrefix(strs0), "fl");
 
-    vector<string> strs1 = {"dog","racecar","car"};
+    vector<string> strs1 = {"dog", "racecar", "car"};
     ASSERT_EQ(s.longestCommonPrefix(strs1), "");
 
-    vector<string> strs2 = {"aa","ab"};
+    vector<string> strs2 = {"aa", "ab"};
     ASSERT_EQ(s.longestCommonPrefix(strs2), "a");
 }

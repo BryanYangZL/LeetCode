@@ -21,12 +21,12 @@ using namespace std;
 // 当前使用unordered_map的hash实现,则比较简单
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
+    vector<int> twoSum(vector<int> &nums, int target) {
         vector<int> res;
         unordered_map<int, int> hash;  // num:idx
         int diff;
 
-        for (int i=0; i<nums.size(); i++) {
+        for (int i = 0; i < nums.size(); i++) {
             diff = target - nums[i];
             if (hash.find(diff) != hash.end()) {
                 res.push_back(hash[diff]);
@@ -40,8 +40,7 @@ public:
     }
 };
 
-TEST(_0001,TwoSum)
-{
+TEST(_0001, TwoSum) {
     vector<int> nums = {2, 7, 11, 15};
     int target = 9;
     Solution s;
