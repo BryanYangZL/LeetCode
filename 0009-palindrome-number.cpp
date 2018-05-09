@@ -23,16 +23,16 @@ class Solution {
 public:
     bool isPalindrome(int x) {
         int palindrome = 0;
-        int cmp = x;
+        int rev = x;
 
         if (x < 0) return false;
 
-        while (x > 0) {
-            palindrome = palindrome * 10 + x % 10;
-            x /= 10;
+        while (rev > 0) {
+            palindrome = palindrome * 10 + rev % 10;
+            rev /= 10;
         }
 
-        return palindrome == cmp;
+        return palindrome == x;
     }
 };
 

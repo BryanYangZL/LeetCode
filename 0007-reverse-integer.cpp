@@ -29,7 +29,7 @@ public:
         long long res = 0;
 
         while (x != 0) {
-            res = 10 * res + x % 10;
+            res = 10 * res + x % 10; // 从低位开始取数,然后不断前移
             x /= 10;
         }
 

@@ -24,13 +24,39 @@ using namespace std;
 
 class Solution {
 public:
-    vector<vector<int>> threeSum(vector<int>& nums) {
+    vector<vector<int>> threeSum(vector<int> &nums) {
         vector<vector<int>> res;
-        std::sort(nums.begin(), nums.end());
+        sort(nums.begin(), nums.end());
     }
 };
 
-TEST(_0015, 3SUM)
-{
+static bool check(vector<vector<int>> &v1, vector<vector<int>> &v2) {
+    int i, j;
 
+    if (v1.size() != v2.size()) {
+        return false;
+    }
+
+    for (i = 0; i < v1.size(); i++) {
+        for (j = 0; j < v2.size(); j++) {
+
+        }
+
+        if (j == v2.size()) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+TEST(_0015, ThreeSum) {
+    Solution s;
+
+    vector<int> case0 = {-1, 0, 1, 2, -1, -4};
+    vector<vector<int>> res0 = {{-1, 0,  1},
+                                {-1, -1, 2}};
+    vector<vector<int>> res0_ = s.threeSum(case0);
+
+    ASSERT_EQ(check(res0, res0_), true);
 }

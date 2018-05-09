@@ -56,7 +56,7 @@ using namespace std;
 class Solution1 {
 public:
     string intToRoman(int num) {
-        string result = "";
+        string res = "";
         const map<int, string> roman = {
                 {1,    "I"},
                 {5,    "V"},
@@ -77,10 +77,10 @@ public:
             // upper_bound得到key大于num的迭代器,然后用prev取这个迭代器前一个元素
             auto iter = prev(roman.upper_bound(num));
             num -= iter->first;
-            result += iter->second;
+            res += iter->second;
         }
 
-        return result;
+        return res;
     }
 };
 
