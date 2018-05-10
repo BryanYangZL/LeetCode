@@ -28,16 +28,15 @@ public:
 
         for (int i = 0; i < s.size() - 1; i++) {
             expand(s, i, i);
-            expand(s, i, i+1);
+            expand(s, i, i + 1);
         }
 
         return s.substr(_left, _right - _left + 1);
     }
 
 private:
-    inline void expand(string &s, int left, int right)
-    {
-        while(left >= 0 && right <= s.size()) {
+    inline void expand(string &s, int left, int right) {
+        while (left >= 0 && right <= s.size()) {
             if (s[left] != s[right]) {
                 break;
             }
@@ -48,7 +47,8 @@ private:
                 _left = left;
             }
 
-            left--; right++;
+            left--;
+            right++;
         }
     }
 
@@ -57,8 +57,7 @@ private:
     int _right = 0;
 };
 
-TEST(_0005, LongestPalindrome)
-{
+TEST(_0005, LongestPalindrome) {
     Solution s1;
     Solution s2;
 
