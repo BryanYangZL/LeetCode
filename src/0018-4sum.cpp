@@ -17,7 +17,6 @@ A solution set is:
 ]
 */
 #include <vector>
-#include <unordered_map>
 
 #include<gtest/gtest.h>
 
