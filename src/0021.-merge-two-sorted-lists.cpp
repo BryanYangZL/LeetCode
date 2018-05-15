@@ -89,6 +89,6 @@ TEST(_0021, MergeTwoLists) {
     List l1 = {1, 2, 4};
     List l2 = {1, 3, 4};
     List cres = {1, 1, 2, 3, 4, 4};
-    ListNode *res = s.mergeTwoLists(l1, l2);
-    ASSERT_TRUE(cres, res);
+    ListNode *res = s.mergeTwoLists(l1.head, l2.head);
+    ASSERT_TRUE(check(cres.head, res));
 }
