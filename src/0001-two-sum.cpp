@@ -10,12 +10,7 @@ Example:
         Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 */
-#include <vector>
-#include <unordered_map>
-
-#include<gtest/gtest.h>
-
-using namespace std;
+#include <utils.h>
 
 // 对于有序序列可以从前后开始匹配,而对于无序序列需要排序后再使用额外空间记录原Index
 // 当前使用unordered_map的hash实现,则比较简单

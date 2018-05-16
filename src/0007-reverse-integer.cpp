@@ -18,10 +18,7 @@ Assume we are dealing with an environment which could only store integers within
  range: [−231,  231 − 1]. For the purpose of this problem, assume that your function returns 0 when the
  reversed integer overflows.
  */
-
-#include <climits>
-
-#include<gtest/gtest.h>
+#include <utils.h>
 
 class Solution {
 public:

@@ -10,12 +10,7 @@ For example, given n = 3, a solution set is:
 "()()()"
 ]
 */
-#include <vector>
-#include <string>
-
-#include<gtest/gtest.h>
-
-using namespace std;
+#include <utils.h>
 
 class Solution {
 public:
@@ -36,24 +31,6 @@ private:
     }
 };
 
-static bool check(vector<string> val0, vector<string> val1) {
-    int i, j;
-
-    for (i = 0; i < val0.size(); i++) {
-        for (j = 0; j < val1.size(); j++) {
-            if (val0[i] == val1[j]) {
-                break;
-            }
-        }
-
-        if (j == val1.size()) {
-            return false;
-        }
-    }
-
-    return true;
-}
-
 TEST(_0022, GenerateParenthesis) {
     Solution s;
     vector<string> cres = {
@@ -63,6 +40,7 @@ TEST(_0022, GenerateParenthesis) {
             "()(())",
             "()()()"
     };
+    vector<string> res = s.generateParenthesis(3);
 
-    ASSERT_TRUE(check(cres, s.generateParenthesis(3)));
+    ASSERT_TRUE(Check::check(res, cres));
 }

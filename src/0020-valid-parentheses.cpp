@@ -27,13 +27,7 @@ Example 5:
 Input: "{[]}"
 Output: true
 */
-#include <string>
-#include <stack>
-#include <unordered_map>
-
-#include<gtest/gtest.h>
-
-using namespace std;
+#include <utils.h>
 
 class Solution {
 public:

@@ -11,12 +11,7 @@ Example 2:
 Input: "cbbd"
 Output: "bb"
  */
-
-#include <string>
-
-#include<gtest/gtest.h>
-
-using namespace std;
+#include <utils.h>
 
 /*
  *  回文字符串为中心对称,所以以每个位置为中心遍历一次.注意需要考虑"aba"和"abba"两种情况

@@ -8,13 +8,7 @@ Example:
 
 The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
  */
-
-#include <vector>
-#include <limits>
-
-#include<gtest/gtest.h>
-
-using namespace std;
+#include <utils.h>
 
 class Solution {
 public:

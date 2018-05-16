@@ -44,11 +44,7 @@ Input: 1994
 Output: "MCMXCIV"
 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 */
-
-#include <map>
-#include <string>
-
-#include<gtest/gtest.h>
+#include <utils.h>
 
 using namespace std;
 

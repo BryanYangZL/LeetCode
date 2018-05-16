@@ -15,12 +15,7 @@ Explanation: There is no common prefix among the input strings.
 Note:
     All given inputs are in lowercase letters a-z.
 */
-
-#include <string>
-
-#include<gtest/gtest.h>
-
-using namespace std;
+#include <utils.h>
 
 // 方法1: 将第一个字符串依次与后同的进行比较,每次仅比较上次相同的最短字符串长度
 class Solution {

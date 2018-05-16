@@ -9,21 +9,7 @@ Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
  */
-
-#include<gtest/gtest.h>
-
-struct ListNode {
-    int val;
-    ListNode *next;
-
-    ListNode(int x) : val(x), next(nullptr) {}
-
-    ListNode *push(int val) {
-        ListNode *node = new ListNode(val);
-        this->next = node;
-        return node;
-    }
-};
+#include <utils.h>
 
 class Solution {
 public:
@@ -48,13 +34,11 @@ public:
 };
 
 TEST(_0002, TwoNumbers) {
-    ListNode *l1 = new ListNode(2);
-    ListNode *l2 = new ListNode(5);
+    List l1 = {2, 4, 3};
+    List l2 = {5, 6, 4};
+    List cres = {7, 0, 8};
     Solution s;
 
-    l1->push(4)->push(3);
-    l2->push(6)->push(4);
-
-    ListNode *res = s.addTwoNumbers(l1, l2);
-    ASSERT_TRUE(res->val == 7 && res->next->val == 0 && res->next->next->val == 8);
+    ListNode *res = s.addTwoNumbers(l1.head, l2.head);
+    ASSERT_TRUE(Check::check(res, cres.head));
 }

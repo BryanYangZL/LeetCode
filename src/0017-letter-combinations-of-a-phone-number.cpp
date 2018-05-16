@@ -10,13 +10,7 @@ Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 
 https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
 */
-#include <vector>
-#include <string>
-#include <unordered_map>
-
-#include<gtest/gtest.h>
-
-using namespace std;
+#include <utils.h>
 
 class Solution {
 public:
@@ -49,24 +43,11 @@ public:
     }
 };
 
-bool check(vector<string> val1, vector<string> val2) {
-    if (val1.size() != val2.size()) {
-        return false;
-    }
-
-    for (int i = 0; i < val1.size(); i++) {
-        if (val1[i] != val2[i]) {
-            return false;
-        }
-    }
-
-    return true;
-}
-
 TEST(_0017, LetterCombinations) {
     Solution s;
     string digits = "23";
     vector<string> combinations = {"ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"};
+    vector<string> res = s.letterCombinations(digits);
 
-    ASSERT_TRUE(check(s.letterCombinations(digits), combinations));
+    ASSERT_TRUE(Check::check(res, combinations));
 }

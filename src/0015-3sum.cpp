@@ -16,10 +16,7 @@ A solution set is:
 [-1, -1, 2]
 ]
 */
-
-#include <vector>
-
-#include<gtest/gtest.h>
+#include <utils.h>
 
 using namespace std;
 
@@ -55,33 +52,14 @@ public:
     }
 };
 
-static bool check(vector<vector<int>> &v1, vector<vector<int>> &v2) {
-    if (v1.size() != v2.size()) {
-        return false;
-    }
-
-    for (int i = 0; i < v1.size(); i++) {
-        if (v1[i].size() != v2[i].size()) {
-            return false;
-        }
-
-        for (int j = 0; j < v1[i].size(); j++) {
-            if (v1[i][j] != v2[i][j]) {
-                return false;
-            }
-        }
-    }
-
-    return true;
-}
 
 TEST(_0015, ThreeSum) {
     Solution s;
 
     vector<int> case0 = {-1, 0, 1, 2, -1, -4};
-    vector<vector<int>> res0 = {{-1, -1, 2},
+    vector<vector<int>> cres0 = {{-1, -1, 2},
                                 {-1, 0,  1}};
-    vector<vector<int>> res0_ = s.threeSum(case0);
+    vector<vector<int>> res0 = s.threeSum(case0);
 
-    ASSERT_EQ(check(res0, res0_), true);
+    ASSERT_EQ(Check::check(res0, cres0), true);
 }

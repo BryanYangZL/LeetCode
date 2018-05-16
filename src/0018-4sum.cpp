@@ -16,11 +16,7 @@ A solution set is:
 [-2,  0, 0, 2]
 ]
 */
-#include <vector>
-
-#include<gtest/gtest.h>
-
-using namespace std;
+#include <utils.h>
 
 class Solution {
 public:
@@ -77,41 +73,15 @@ public:
     }
 };
 
-bool check(vector<vector<int>> val1, vector<vector<int>> val2) {
-    int i, j, k;
-    if (val1.size() != val2.size()) {
-        return false;
-    }
-
-    for (i = 0; i < val1.size(); i++) {
-        for (j = 0; j < val2.size(); j++) {
-            for (k = 0; k < val2[j].size(); k++) {
-                if (val1[i][k] != val2[j][k]) { // 因为己经是排序好的,所以依次比较就行
-                    break;
-                }
-            }
-
-            if (k == val2[j].size()) {
-                break;
-            }
-        }
-
-        if (j == val2.size()) {
-            return false;
-        }
-    }
-
-    return true;
-}
-
 TEST(_0018, FourSum) {
     Solution s;
 
     vector<int> case0 = {1, 0, -1, 0, -2, 2};
     int target0 = 0;
-    vector<vector<int>> res0 = {{-1, 0,  0, 1},
+    vector<vector<int>> cres = {{-1, 0,  0, 1},
                                 {-2, -1, 1, 2},
                                 {-2, 0,  0, 2}};
-    ASSERT_TRUE(check(s.fourSum(case0, target0), res0));
+    vector<vector<int>> res = s.fourSum(case0, target0);
+    ASSERT_TRUE(Check::check(res, cres));
 }
 

@@ -5,12 +5,7 @@ Find two lines, which together with x-axis forms a container, such that the cont
 
 Note: You may not slant the container and n is at least 2.
  */
-
-#include <vector>
-
-#include<gtest/gtest.h>
-
-using namespace std;
+#include <utils.h>
 
 // 从两边开始搜索,如果要比之前的容量大,则必须比两边的一边要高,所以前短边往中间移动
 class Solution {

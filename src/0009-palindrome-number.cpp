@@ -16,8 +16,7 @@ Input: 10
 Output: false
 Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 */
-
-#include<gtest/gtest.h>
+#include <utils.h>
 
 class Solution {
 public:
