@@ -46,6 +46,10 @@ public:
 
         for (i = 0; i < val1.size(); i++) {
             for (j = 0; j < val2.size(); j++) {
+                if (val1[i].size() != val2[j].size()) {
+                    break;
+                }
+
                 for (k = 0; k < val2[j].size(); k++) {
                     if (val1[i][k] != val2[j][k]) { // 因为己经是排序好的,所以依次比较就行
                         break;

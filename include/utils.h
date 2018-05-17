@@ -7,6 +7,7 @@
 #include <climits>
 #include <map>
 #include <stack>
+#include <queue>
 
 #include<gtest/gtest.h>
 
