@@ -1,6 +1,8 @@
 #ifndef LEETCODE_CHECK_H
 #define LEETCODE_CHECK_H
 
+#include <utils.h>
+
 class Check {
 public:
     // 检查两个list是否相等

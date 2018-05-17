@@ -1,6 +1,8 @@
 #ifndef LEETCODE_LIST_H
 #define LEETCODE_LIST_H
 
+#include <utils.h>
+
 struct ListNode {
     int val;
     ListNode *next;
