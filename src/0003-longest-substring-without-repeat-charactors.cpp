@@ -15,11 +15,11 @@ class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
         int start = -1;
-        vector<int> idx(256, -1);
+        vector<int> idx(256, -1);  // 用于记录所有字母时的顺序值。
         int max_len = 0;
 
         for (int i = 0; i < s.size(); i++) {
-            if (idx[s[i]] > start) {
+            if (idx[s[i]] > start) {  // 当出现重复字母时, 则从重复字母开始重新计数
                 start = idx[s[i]];
             }
 

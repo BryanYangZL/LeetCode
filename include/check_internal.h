@@ -70,6 +70,26 @@ public:
 
         return true;
     }
+
+    static bool check(vector<int> &val1, vector<int> &val2) {
+        int i;
+
+        if (val1.size() != val2.size()) return false;
+
+        for (auto v1:val1) {
+            for (i = 0; i < val2.size(); i++) {
+                if (v1 == val2[i]) {
+                    break;
+                }
+            }
+
+            if (i == val2.size()) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 };
 
 #endif //LEETCODE_CHECK_H
