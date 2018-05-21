@@ -8,6 +8,8 @@
 #include <map>
 #include <stack>
 #include <queue>
+#include <algorithm>
+#include <iostream>
 
 #include<gtest/gtest.h>
 

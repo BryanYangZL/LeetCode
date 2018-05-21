@@ -90,6 +90,18 @@ public:
 
         return true;
     }
+
+    static bool check_with_order(vector<int> &val1, vector<int> &val2) {
+        if (val1.size() != val2.size()) return false;
+
+        for (int i = 0; i < val1.size(); i++) {
+            if (val1[i] != val2[i]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 };
 
 #endif //LEETCODE_CHECK_H
