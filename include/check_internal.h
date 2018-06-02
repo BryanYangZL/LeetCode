@@ -40,6 +40,7 @@ public:
         return true;
     }
 
+    // 当前默认是vector<int>是己经排序好的向量
     static bool check(vector<vector<int>> &val1, vector<vector<int>> &val2) {
         int i, j, k;
         if (val1.size() != val2.size()) {
@@ -49,11 +50,11 @@ public:
         for (i = 0; i < val1.size(); i++) {
             for (j = 0; j < val2.size(); j++) {
                 if (val1[i].size() != val2[j].size()) {
-                    break;
+                    continue;
                 }
 
                 for (k = 0; k < val2[j].size(); k++) {
-                    if (val1[i][k] != val2[j][k]) { // 因为己经是排序好的,所以依次比较就行
+                    if (val1[i][k] != val2[j][k]) {
                         break;
                     }
                 }
@@ -71,6 +72,7 @@ public:
         return true;
     }
 
+    // warning: 不能检查出重复数字,暂不解决
     static bool check(vector<int> &val1, vector<int> &val2) {
         int i;
 
