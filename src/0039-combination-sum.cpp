@@ -29,7 +29,7 @@ Input: candidates = [2,3,5], target = 8,
 class Solution {
 public:
     vector<vector<int>> combinationSum(vector<int> &candidates, int target) {
-        sort(candidates.begin(), candidates.end());  // 方便后续及时退出不必要的循环
+        sort(candidates.begin(), candidates.end());  // 方便后续及时退出不必要的循环;输入的字符是没有重复数字的
         vector<vector<int>> res;
         vector<int> tmp;
 
@@ -40,7 +40,7 @@ public:
 
 private:
     void backtracking(int start, vector<int> &candidates, int target, vector<int> &tmp, vector<vector<int>> &res) {
-        if (!target) {
+        if (target == 0) {
             res.push_back(tmp);
             return;
         }
